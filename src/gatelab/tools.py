@@ -1,0 +1,37 @@
+"""The 6 tools of Gate Lab: tool -> (summary, [(module, function, action)]).
+
+Each action calls the existing lab function unchanged. 26 former tools.
+"""
+
+TOOLS = {'gate_cases': ('The cases the gate judges: list, metrics, weapons, add a case.',
+                [('weaponlab.server', 'gate_cases', 'list'),
+                 ('weaponlab.server', 'gate_metrics', 'metrics'),
+                 ('weaponlab.server', 'gate_weapons', 'weapons'),
+                 ('weaponlab.server', 'gate_add_case', 'add')]),
+ 'gate_run': ('Run the gate, read the verdict, set the baseline.',
+              [('weaponlab.server', 'gate_run', 'run'),
+               ('weaponlab.server', 'gate_verdict', 'verdict'),
+               ('weaponlab.server', 'gate_set_baseline', 'set_baseline')]),
+ 'gate_judge': ('Proposals a person approves, and the evals of each check.',
+                [('weaponlab.server', 'gate_propose', 'propose'),
+                 ('weaponlab.server', 'gate_approve', 'approve'),
+                 ('weaponlab.server', 'gate_proposals', 'proposals'),
+                 ('weaponlab.server', 'gate_evals', 'evals')]),
+ 'probe': ('The probe that measures in the engine: status, plan, run.',
+           [('weaponlab.server', 'probe_status', 'status'),
+            ('weaponlab.server', 'probe_plan', 'plan'),
+            ('weaponlab.server', 'probe_run', 'run')]),
+ 'feel': ('Game feel checks: checklist, scenes, metrics, timelines, judge a folder, gate rows.',
+          [('feellab.server', 'list_checklist', 'list_checklist'),
+           ('feellab.server', 'list_scenes', 'list_scenes'),
+           ('feellab.server', 'list_metrics', 'list_metrics'),
+           ('feellab.server', 'check_timeline', 'check_timeline'),
+           ('feellab.server', 'judge_folder', 'judge_folder'),
+           ('feellab.server', 'gate_rows', 'gate_rows')]),
+ 'project': ('The project contract and specs: info, contract check, list, read, validate, write.',
+             [('weaponlab.server', 'project_info', 'info'),
+              ('weaponlab.server', 'contract_check', 'contract_check'),
+              ('weaponlab.server', 'spec_list', 'spec_list'),
+              ('weaponlab.server', 'spec_read', 'spec_read'),
+              ('weaponlab.server', 'spec_validate', 'spec_validate'),
+              ('weaponlab.server', 'spec_write', 'spec_write')])}

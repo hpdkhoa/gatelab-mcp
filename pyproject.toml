@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gatelab-mcp"
+version = "0.1.0"
+description = "Gate Lab: Judges every result against walls and the owner's judgments, and turns each judgment into a check."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=2.0,<3",
+    "weaponlab-mcp @ git+https://github.com/hpdkhoa/weaponlab-mcp.git",
+    "feellab-mcp @ git+https://github.com/hpdkhoa/feellab-mcp.git",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+gatelab-mcp = "gatelab.server:main"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gatelab"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
